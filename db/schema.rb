@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_23_185744) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_24_172044) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "commenter_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.integer "parent_comment_id"
+    t.bigint "post_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.string "draft_or_published"
+    t.string "title"
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "subscription_emails", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "post_id", null: false
+    t.string "status"
+    t.bigint "subscription_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_subscription_emails_on_post_id"
+    t.index ["subscription_id"], name: "index_subscription_emails_on_subscription_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "subscribed_to_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["subscribed_to_id"], name: "index_subscriptions_on_subscribed_to_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -21,8 +61,33 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_23_185744) do
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
+    t.string "role"
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  create_table "votes", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.datetime "created_at", null: false
+    t.bigint "post_id"
+    t.datetime "updated_at", null: false
+    t.string "upvote_or_downvote"
+    t.bigint "user_id", null: false
+    t.index ["comment_id"], name: "index_votes_on_comment_id"
+    t.index ["post_id"], name: "index_votes_on_post_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users", column: "commenter_id"
+  add_foreign_key "posts", "users"
+  add_foreign_key "subscription_emails", "posts"
+  add_foreign_key "subscription_emails", "subscriptions"
+  add_foreign_key "subscriptions", "users"
+  add_foreign_key "subscriptions", "users", column: "subscribed_to_id"
+  add_foreign_key "votes", "comments"
+  add_foreign_key "votes", "posts"
+  add_foreign_key "votes", "users"
 end
