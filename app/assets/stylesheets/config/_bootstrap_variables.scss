@@ -7,11 +7,12 @@
 // General style
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
-$body-bg:                $light-gray;
+$body-bg:                $upstack-bg;
 $font-size-base:         1rem;
+$color:                  $upstack-text;
 
 // Colors
-$body-color: $gray;
+$body-color: $upstack-text;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
