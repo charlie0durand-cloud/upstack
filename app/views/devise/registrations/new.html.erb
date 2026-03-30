@@ -5,7 +5,7 @@
       <p class="devise-subtitle">Join today</p>
     </div>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -23,6 +23,13 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+        <div class="upload-profile-picture">
+          <%= f.file_field :profile_picture, class: "d-none", accept: "image/*", id: "signup-photo-upload" %>
+             <label for="signup-photo-upload" class="btn-upload-photo">
+                  <i class="fas fa-camera me-2"></i>Choisir une photo de profil
+              </label>
+
+        </div>
       </div>
 
       <div class="form-actions">

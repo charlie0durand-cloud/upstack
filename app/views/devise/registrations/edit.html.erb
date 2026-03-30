@@ -5,7 +5,7 @@
       <p class="devise-subtitle">Update your profile</p>
     </div>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -29,22 +29,21 @@
                     hint: "Required to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
+        <div class="edit-profile-picture">
+          <% if resource.profile_picture.attached? %>
+            <%= image_tag resource.profile_picture, class: "current-avatar" %>
+          <% end %>
+          <%= f.file_field :profile_picture, class: "d-none", accept: "image/*", id: "edit-photo-upload" %>
+            <label for="edit-photo-upload" class="btn-upload-photo">
+              <i class="fas fa-camera me-2"></i>
+              <%= resource.profile_picture.attached? ? "Changer la photo" : "Choisir une photo de profil" %>
+            </label>
+        </div>
       </div>
 
       <div class="form-actions">
         <%= f.button :submit, "Save changes" %>
       </div>
     <% end %>
-
-    <div class="devise-danger-zone">
-      <h3>Danger zone</h3>
-      <p>Permanently delete your account and all associated data.</p>
-      <%= button_to "Cancel my account",
-                    registration_path(resource_name),
-                    data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" },
-                    method: :delete,
-                    class: "btn-cancel-account" %>
-      <%= link_to "← Back", :back, class: "devise-back-link" %>
-    </div>
   </div>
 </div>

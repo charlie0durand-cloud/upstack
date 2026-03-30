@@ -138,6 +138,26 @@
   }
 }
 
+.current-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.625rem;
+  display: block;
+}
+
+.btn-upload-photo {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: $upstack-bg;
+  border: 1px solid $upstack-border;
+  border-radius: 0.5rem;
+  color: $upstack-text;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
 // Navigation links below the form
 
 .devise-links {
