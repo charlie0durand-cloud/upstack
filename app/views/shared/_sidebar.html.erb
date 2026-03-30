@@ -1,0 +1,41 @@
+<div class="nav">
+<%# Top: logo %>
+  <div class="sidebar-top">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+  </div>
+
+<%# Middle: List of features %>
+    <%# The color of the icons is hard-coded instead of being a variable %>
+<div class="menu-features">
+  <div class="menu-features-item">
+    <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="#777777" stroke-width="1.8" stroke="none" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;"><g><title></title><path d="M13.315 1.4785C12.5616 0.840501 11.4384 0.840501 10.685 1.4785L2.02743 8.80973C1.37462 9.36254 1 10.1622 1 11.003L1 19.1187C1 21.2623 2.79086 23 5 23L19 23C21.2091 23 23 21.2623 23 19.1187V11.003C23 10.1622 22.6254 9.36254 21.9726 8.80973L13.315 1.4785ZM10.4472 17.2804C9.95321 17.0408 9.35254 17.2351 9.10555 17.7144C8.85856 18.1937 9.05878 18.7765 9.55276 19.0162C11.0933 19.7636 12.9067 19.7636 14.4472 19.0162C14.9412 18.7766 15.1414 18.1937 14.8944 17.7144C14.6474 17.2351 14.0468 17.0408 13.5528 17.2804C12.5753 17.7547 11.4247 17.7547 10.4472 17.2804Z" fill-rule="evenodd" clip-rule="evenodd"></path></g></svg>
+    <%= link_to "Home", "#" %>
+  </div>
+  <div class="menu-features-item">
+    <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="#777777" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;"><g><title></title><path d="M1.99999 14L2.00001 18.5C2.00001 20.1569 3.34316 21.5 5.00001 21.5H19C20.6569 21.5 22 20.1569 22 18.5V14M1.99999 14H8.5L9.29342 16.3732C9.41681 16.7422 9.76236 16.9911 10.1515 16.9911H13.8485C14.2376 16.9911 14.5832 16.7422 14.7066 16.3732L15.5 14H22M1.99999 14L5.12 3.30286C5.34518 2.53079 6.05291 2 6.85714 2H17.1429C17.9471 2 18.6548 2.53079 18.88 3.30286L22 14"></path></g></svg>
+    <%= link_to "Subscriptions", "#" %>
+  </div>
+  <div class="menu-features-item">
+    <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="#777777" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;"><g><title></title><path d="M9.84924 21.9622C11.2032 22.6392 12.7968 22.6392 14.1507 21.9622M9.446 1.90703C8.59467 2.16583 6.63661 3.14927 5.61501 5.01263C4.33801 7.34183 4.70638 10.6565 4.33801 12.0002C3.96965 13.344 3.06102 14.3294 2.42252 15.8822C2.27112 16.2504 2.15563 16.5749 2.06751 16.8662C1.72354 18.0031 2.74693 18.9878 3.93475 18.9878H20.0652C21.2531 18.9878 22.2764 18.0031 21.9325 16.8662C21.8444 16.5749 21.7289 16.2504 21.5775 15.8822C20.939 14.3294 20.0303 13.344 19.662 12.0002C19.2936 10.6565 19.662 7.34183 18.385 5.01263C17.3634 3.14927 15.4053 2.16583 14.554 1.90703C12.8884 1.40469 11.1116 1.40469 9.446 1.90703Z"></path></g></svg>
+    <%= link_to "Activity", "#" %>
+  </div>
+  <div class="menu-features-item">
+    <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="#777777" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;"><g><title></title><path d="M16 16V8M8 16V14M12 16V11M5 22H19C20.6569 22 22 20.6569 22 19V5C22 3.34315 20.6569 2 19 2H5C3.34315 2 2 3.34315 2 5V19C2 20.6569 3.34315 22 5 22Z"></path></g></svg>
+    <%= link_to "Leaderboard", "#" %>
+  </div>
+  <div class="menu-features-item d-flex">
+    <% if current_user.profile_picture %>
+      <%= image_tag current_user.profile_picture, class: "menu-profile-avatar" %>
+    <% end %>
+    <%= link_to "Profile", "#" %>
+  </div>
+</div>
+
+<%# Bottom: Button to create a new post %>
+    <button class="create-btn-sidebar">
+      <span class="create-post-text">Create post</span>
+    </button>
+
+</div>
