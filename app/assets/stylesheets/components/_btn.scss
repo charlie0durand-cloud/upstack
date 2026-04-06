@@ -1,0 +1,23 @@
+.orange-btn {
+  border-radius: 10px;
+  background-color: $upstack-accent;
+  border-color: $upstack-accent;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  height: 40px;
+
+  &:hover, &:focus, &:active {
+    background-color: darken($upstack-accent, 8%);
+    border-color: darken($upstack-accent, 8%);
+    color: white;
+  }
+
+  .orange-btn-text {
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+}
