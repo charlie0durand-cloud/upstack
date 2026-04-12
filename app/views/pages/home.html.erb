@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-hero">
+  <div class="home-hero__inner">
+    <h1 class="home-hero__title">
+      Welcome to <span class="home-hero__accent">Upstack</span>
+    </h1>
+    <p class="home-hero__subtitle">
+      Share ideas. Spark conversations. Build your stack.
+    </p>
+    <div class="home-hero__actions">
+      <% if user_signed_in? %>
+        <%= link_to "Get reading", posts_path, class: "btn btn primary home-hero__cta" %>
+        <%= link_to "Learn more", "#", class: "btn btn-outline-secondary home-hero__secondary" %>
+      <% else %>
+        <%= link_to "Get started", new_user_registration_path, class: "btn btn-primary home-hero__cta" %>
+        <%= link_to "Learn more", "#", class: "btn btn-outline-secondary home-hero__secondary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
