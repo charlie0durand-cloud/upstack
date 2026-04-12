@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="header-post-page d-flex justify-content-between">
+    <%= link_to ('<i class="fa-solid fa-xmark"></i>').html_safe, posts_path %>
+    <%= link_to "Subscribe", "#", class: "orange-btn small-btn" %>
+  </div>
+
+  <div class="post-feed">
+    <h1 class="post-show-title"> <%= @post.title %></h1>
+    <div class="d-flex">
+
+      <% if @post.user.profile_picture.attached? %>
+        <%= image_tag @post.user.profile_picture, class: "post-profile-avatar" %>
+      <% else %>
+        <span class="post-author-avatar"><%= @post.user.username[0].upcase %></span>
+      <% end %>
+
+      <div>
+        <span class="username-post"> <%= @post.user.username.upcase %></span><br>
+        <span class="date-post"> <%= @post.created_at.strftime("%B %d, %Y") %></span>
+      </div>
+    </div>
+
+    <hr>
+    <%= cl_image_tag @post.post_picture.key, crop: :fill %>
+    <div class="content-post"> <%= @post.content %> </div>
+    <hr>
+    <div class="subscribe-section">
+      <p class="subscribe-label">Subscribe to <%= @post.user.username %></p>
+      <%= link_to "Subscribe", "#", class: "orange-btn" %>
+    </div>
+  </div>
+  </div>
