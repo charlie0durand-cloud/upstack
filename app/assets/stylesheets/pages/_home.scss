@@ -1,1 +1,66 @@
 // Specific CSS for your home-page
+
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $upstack-bg;
+  padding: 2rem;
+
+  &__inner {
+    text-align: center;
+    max-width: 560px;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $upstack-text;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  &__accent {
+    color: $upstack-accent;
+  }
+
+  &__subtitle {
+    font-size: 1.15rem;
+    color: $upstack-muted;
+    margin-bottom: 2.5rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__cta {
+    background-color: $upstack-accent;
+    border-color: $upstack-accent;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.6rem;
+
+    &:hover {
+      background-color: darken($upstack-accent, 8%);
+      border-color: darken($upstack-accent, 8%);
+      color: #fff;
+    }
+  }
+
+  &__secondary {
+    border-color: $upstack-border;
+    color: $upstack-muted;
+    padding: 0.6rem 1.6rem;
+
+    &:hover {
+      border-color: $upstack-text;
+      color: $upstack-text;
+      background-color: transparent;
+    }
+  }
+}
