@@ -8,7 +8,11 @@
       <% @posts.each do |post| %>
         <div class="post-card">
           <div class="post-card-image">
-            <img src="https://img.freepik.com/free-photo/nature-landscape-with-hand-holding-frame_23-2149389976.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+            <% if post.post_picture.attached? %>
+              <%= cl_image_tag post.post_picture.key, crop: :fill %>
+            <% else %>
+              <img src="https://img.freepik.com/free-photo/nature-landscape-with-hand-holding-frame_23-2149389976.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+            <% end %>
           </div>
 
           <div class="post-card-body">
