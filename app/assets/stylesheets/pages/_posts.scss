@@ -108,7 +108,7 @@
 .header-post-page {
   position: relative;
   height: 64px;
-  a {
+  a:not(.orange-btn) {
     color: #555;
     display: block;
     padding: 20px;
@@ -233,4 +233,50 @@
 .post-picture-upload {
   width: 200px;
   margin-bottom: 10px;
+}
+
+
+.post-profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.625rem;
+  display: block;
+  margin-right: 8px;
+}
+
+.post-show-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.username-post {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.date-post {
+  color: #939393;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.content-post {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.subscribe-section {
+  text-align: center;
+  padding: 1rem 0 2rem;
+
+  .subscribe-label {
+    font-size: 0.9rem;
+    color: $upstack-muted;
+    margin-bottom: 0.75rem;
+  }
 }
