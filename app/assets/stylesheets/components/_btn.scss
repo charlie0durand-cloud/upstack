@@ -1,23 +1,38 @@
 .orange-btn {
   border-radius: 10px;
   background-color: $upstack-accent;
-  border-color: $upstack-accent;
   color: white;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-right: 10px;
   margin-top: 20px;
   height: 40px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 15px;
 
   &:hover, &:focus, &:active {
     background-color: darken($upstack-accent, 8%);
-    border-color: darken($upstack-accent, 8%);
     color: white;
+    outline: none;
+    box-shadow: none;
   }
+}
 
-  .orange-btn-text {
-    color: white;
-    padding: 10px;
-    font-weight: 500;
-    font-size: 15px;
-  }
+.sidebar-btn {
+  width: 200px;
+}
+
+.create-post-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
 }
