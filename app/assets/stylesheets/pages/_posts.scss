@@ -342,3 +342,14 @@
 .post-link {
   text-decoration: none;
 }
+
+.edit-delete-buttons {
+  i {
+    display: inline-block;
+    color: $upstack-text;
+    &:hover {
+      color: white;
+    }
+    margin-top: 10px;
+  }
+}
