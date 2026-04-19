@@ -1,3 +1,61 @@
+// Search bar
+
+.search-bar {
+  width: 60%;
+  margin: 1.5rem auto 0;
+}
+
+.search-bar-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: $upstack-card-bg;
+  border: 1.5px solid $upstack-border;
+  border-radius: 9999px;
+  padding: 0 0.5rem 0 1.1rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+
+  &:focus-within {
+    border-color: $upstack-muted;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+  }
+}
+
+.search-bar-icon {
+  color: $upstack-muted;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.search-bar-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: $upstack-text;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.75rem;
+  outline: none;
+
+  &::placeholder { color: $upstack-muted; }
+}
+
+.search-bar-btn {
+  background: $upstack-accent;
+  border: none;
+  border-radius: 9999px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.4rem 1.1rem;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+
+  &:hover { opacity: 0.85; }
+}
+
 // Post feed & cards — Substack-style
 
 .post-feed {
