@@ -1,0 +1,27 @@
+<div class="new-post-layout">
+  <div class="header-post-page">
+    <%= link_to ('<i class="fa-solid fa-angle-left"></i>').html_safe, :back %>
+  </div>
+
+  <div class="new-post-page">
+    <%= simple_form_for @post do |f| %>
+      <%= f.input :title, :placeholder => "Title", label: false %>
+
+      <div class="upload-post-picture" data-controller="image-preview">
+        <img data-image-preview-target="canvas" hidden class="object-cover size-48 post-picture-upload">
+        <% if @post.post_picture.attached? %>
+          <%= cl_image_tag @post.post_picture.key, crop: :fill, class:"object-cover size-48 post-picture-upload", data: { image_preview_target: "picture" } %>
+        <% end %>
+
+        <br>
+        <%= f.file_field :post_picture, class: "d-none", accept: "image/*", id: "post-photo-upload", data: { action: "image-preview#show", image_preview_target: "source" } %>
+        <label for="post-photo-upload" class="btn-upload-photo">
+          <i class="fas fa-camera me-2"></i>Upload a picture
+        </label>
+      </div>
+
+      <%= f.rich_textarea :content, as: :text, :placeholder => "Start writing" %>
+      <%= f.button :submit, "Update", class:"orange-btn create-post-btn small-btn" %>
+    <% end %>
+  </div>
+</div>
