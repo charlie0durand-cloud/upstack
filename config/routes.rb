@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   #
   resources :posts
+  resources :subscriptions, only: [:create, :destroy, :index]
 end

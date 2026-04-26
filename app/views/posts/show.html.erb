@@ -12,7 +12,11 @@
         <i class="fa-solid fa-pen-to-square"></i>
       <% end %>
     <% end %>
-    <%= link_to "Subscribe", "#", class: "orange-btn small-btn" %>
+    <% if @subscription %>
+      <%= link_to "Unsubscribe", subscription_path(@subscription), data: {turbo_method: :delete}, class: "orange-btn small-btn" %>
+    <% else %>
+      <%= link_to "Subscribe", subscriptions_path(post: @post), data: {turbo_method: :post}, class: "orange-btn small-btn" %>
+    <% end %>
     </div>
 
   </div>
