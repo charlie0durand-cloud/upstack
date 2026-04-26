@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @subscription = Subscription.find_by(@post.user == :subscribed_to_id && @current_user == :user_id)
     authorize @post
   end
 
