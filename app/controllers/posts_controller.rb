@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = policy_scope(Post)
     # At some point this should be more complex, like a sample on the latest posts.
     if params[:query].present?
       @posts = Post.search_by_title_and_content(params[:query])
     end
 
-    @posts = policy_scope(Post)
   end
 
   def show
