@@ -9,8 +9,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    # The button appears as Unsubscribe even if I'm not the user who subscribed
+    # I need to do some eager loading to reduce the amount of query to get the info of each post.
+
     @post = Post.find(params[:id])
-    @subscription = Subscription.find_by(@post.user == :subscribed_to_id && @current_user == :user_id)
+    @subscription = Subscription.find_by(@post.user == :subscribed_to_id && current_user == :user_id)
     authorize @post
   end
 
@@ -29,10 +32,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+
+    @subscribers = Subscription.where(current_user == :subscribed_to_id).to_a
+
     authorize @post
 
     if @post.save
       redirect_to post_path(@post)
+      UserMailer.with(post: @post, subscribers: @subscribers).new_post_email.deliver_later
     else
       redirect_to root_path
     end
