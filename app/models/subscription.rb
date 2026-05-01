@@ -1,5 +1,6 @@
 class Subscription < ApplicationRecord
   belongs_to :user
   has_many :subscription_emails
-  # I need to make a validates here to make sure we can subscribe only once
+  validates :subscribed_to_id, comparison: { other_than: :user_id, message: "You can't subscribe to yourself." }
+  validates :subscribed_to_id, uniqueness: { scope: :user_id, message: "You can't subscribe twice to the same user."}
 end
