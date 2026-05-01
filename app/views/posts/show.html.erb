@@ -3,7 +3,7 @@
     <%= link_to ('<i class="fa-solid fa-xmark"></i>').html_safe, posts_path %>
     <div class="d-flex edit-delete-buttons">
       <% if policy(@post).destroy? %>
-      <%= link_to post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
         <i class="fa-solid fa-trash"></i>
       <% end %>
     <% end %>
@@ -13,9 +13,10 @@
       <% end %>
     <% end %>
     <% if @subscription %>
-      <%= link_to "Unsubscribe", subscription_path(@subscription), data: {turbo_method: :delete}, class: "orange-btn small-btn" %>
+      <%= link_to "Unsubscribe", subscription_path(@subscription), data: { turbo_method: :delete }, class: "orange-btn small-btn" %>
+    <% elsif @post.user == current_user %>
     <% else %>
-      <%= link_to "Subscribe", subscriptions_path(post: @post), data: {turbo_method: :post}, class: "orange-btn small-btn" %>
+      <%= link_to "Subscribe", subscriptions_path(post: @post), data: { turbo_method: :post, turbo: false }, class: "orange-btn small-btn" %>
     <% end %>
     </div>
 
