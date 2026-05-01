@@ -14,8 +14,8 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     @subscription = Subscription.find(params[:id])
-    @subscription.destroy
     authorize @subscription
+    @subscription.destroy
   end
 
 
