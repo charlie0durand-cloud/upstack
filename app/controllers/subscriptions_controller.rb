@@ -9,9 +9,14 @@ class SubscriptionsController < ApplicationController
     authorize @subscription
   end
 
+  def index
+  end
+
   def destroy
     @subscription = Subscription.find(params[:id])
     @subscription.destroy
     authorize @subscription
   end
+
+
 end
