@@ -10,6 +10,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def index
+    @subscriptions = policy_scope(Subscription)
+
+    @subscriptions = Subscription.where(current_user == :user_id)
   end
 
   def destroy
@@ -17,6 +20,4 @@ class SubscriptionsController < ApplicationController
     authorize @subscription
     @subscription.destroy
   end
-
-
 end
