@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-2">
+    <%= render "shared/sidebar" %>
+  </div>
+
+  <div class="col-10">
+    <div class="subscription-page">
+      <h2 class="subscription-page-title">Subscription list</h2>
+<div class="subscription-list">
+  <% if @subscriptions.empty? %>
+    <p>No subscription yet</p>
+  <% else %>
+
+        <% @subscriptions.each do |subscription| %>
+          <% user_subscribed_to = User.find_by_id(subscription.subscribed_to_id) %>
+          <%= link_to "#", class: "subscription-link" do %>
+            <div class="subscription-card">
+              <% if user_subscribed_to.profile_picture.attached? %>
+                <%= image_tag user_subscribed_to.profile_picture, class: "subscription-avatar" %>
+              <% else %>
+                <span class="subscription-avatar subscription-avatar--initial"><%= user_subscribed_to.username[0].upcase %></span>
+              <% end %>
+              <span class="subscription-username"><%= user_subscribed_to.username %></span>
+            </div>
+          <% end %>
+        <% end %>
+  <% end %>
+      </div>
+    </div>
+  </div>
+</div>

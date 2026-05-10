@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
       mail(to: @email, subject: "New post from #{@post.user.username}")
     end
 
-    # My create post method will call new_post_email. I can pass @post at this moment.
-    # I should be able to reconstruct the url with the id of @post
+    # My create post method call new_post_email and pass @post and the array @subscribers at this moment.
+    # I have a view of the email new_post_email.html.erb.
   end
 end

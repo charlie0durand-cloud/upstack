@@ -1,0 +1,64 @@
+.subscription-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 0 2rem 3rem;
+}
+
+.subscription-page-title {
+  color: $upstack-text;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.subscription-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 640px;
+}
+
+.subscription-link {
+  text-decoration: none;
+}
+
+.subscription-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  background: $upstack-card-bg;
+  border: 1px solid $upstack-border;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+
+  &:hover {
+    border-color: #333;
+    transform: translateY(-1px);
+  }
+}
+
+.subscription-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.subscription-avatar--initial {
+  background: $upstack-accent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscription-username {
+  color: $upstack-text;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
