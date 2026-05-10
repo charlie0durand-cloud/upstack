@@ -5,6 +5,9 @@ class Post < ApplicationRecord
   has_many :comments
   has_rich_text :content
   has_one_attached :post_picture
+  validates :post_picture, presence: { message: "can't be blank" }
+  validates :title, presence: true
+  validates :content, presence: true
 
   include PgSearch::Model
 

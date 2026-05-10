@@ -345,3 +345,21 @@
   width: 200px;
   margin-bottom: 10px;
 }
+
+.post-form-errors {
+  background: rgba(255, 70, 70, 0.08);
+  border: 1.5px solid rgba(220, 53, 53, 0.35);
+  border-radius: 8px;
+  color: #c0392b;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  li + li { margin-top: 0.25rem; }
+}

@@ -41,7 +41,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
       UserMailer.with(post: @post, subscribers: @subscribers).new_post_email.deliver_later
     else
-      redirect_to root_path
+      render :new, status: :unprocessable_entity
     end
   end
 
