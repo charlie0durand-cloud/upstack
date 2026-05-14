@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     # I need to do some eager loading to reduce the amount of query to get the info of each post. I have the N+1 query problem.
 
     @post = Post.find(params[:id])
-    @subscription = Subscription.find_by(@post.user == :subscribed_to_id && current_user == :user_id)
+    @subscription = Subscription.find_by(subscribed_to_id: @post.user, user_id: current_user)
     authorize @post
   end
 

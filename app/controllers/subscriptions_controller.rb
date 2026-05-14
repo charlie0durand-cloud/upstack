@@ -7,6 +7,7 @@ class SubscriptionsController < ApplicationController
     )
     @subscription.save
     authorize @subscription
+    redirect_back fallback_location: root_path
   end
 
   def index
@@ -19,5 +20,6 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.find(params[:id])
     authorize @subscription
     @subscription.destroy
+    redirect_back fallback_location: root_path
   end
 end

@@ -12,11 +12,13 @@
         <i class="fa-solid fa-pen-to-square"></i>
       <% end %>
     <% end %>
+
+  <%# Subscribe/Unsubscribe button %>
     <% if @subscription %>
       <%= link_to "Unsubscribe", subscription_path(@subscription), data: { turbo_method: :delete }, class: "orange-btn small-btn" %>
     <% elsif @post.user == current_user %>
     <% else %>
-      <%= button_to "Subscribe", subscriptions_path(post: @post), data: { 'turbo-method' => :post }, class: "orange-btn small-btn" %>
+      <%= button_to "Subscribe", subscriptions_path(post: @post), data: { 'turbo-method' => :post, turbo: false }, class: "orange-btn small-btn" %>
     <% end %>
     </div>
 
@@ -44,7 +46,6 @@
     <hr>
     <div class="subscribe-section">
       <p class="subscribe-label">Subscribe to <%= @post.user.username %></p>
-      <%= link_to "Subscribe", "#", class: "orange-btn" %>
     </div>
   </div>
   </div>
