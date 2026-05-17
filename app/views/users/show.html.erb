@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-2">
+    <%= render "shared/sidebar" %>
+  </div>
+
+  <div class="col-10">
+    <div class="profile-page">
+
+      <div class="profile-header">
+        <% if @user.profile_picture.attached? %>
+          <%= image_tag @user.profile_picture, class: "profile-header__avatar-img" %>
+        <% else %>
+          <span class="profile-header__avatar-initials"><%= @user.username[0].upcase %></span>
+        <% end %>
+
+        <div class="profile-header__info">
+          <h1 class="profile-header__username"><%= @user.username %></h1>
+          <p class="profile-header__email"><%= @user.email %></p>
+          <div class="profile-header__stats">
+            <span class="profile-header__stat">
+              <strong><%= @posts.count %></strong> posts
+            </span>
+          </div>
+        </div>
+
+        <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "profile-header__logout" %>
+      </div>
+
+      <div class="profile-posts">
+        <p class="profile-posts__heading">Your posts</p>
+        <div class="post-feed">
+          <% @posts.each do |post| %>
+            <%= render "shared/post", post: post %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
