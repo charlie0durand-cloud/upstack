@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
+    authorize Post
     @posts = policy_scope(Post)
+    @user = current_user
     # At some point this should be more complex, like a sample on the latest posts.
     if params[:query].present?
-      @posts = Post.search_by_title_and_content(params[:query])
+      @posts = @posts.search_by_title_and_content(params[:query])
     end
-
   end
 
   def show

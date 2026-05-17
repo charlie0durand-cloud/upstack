@@ -29,10 +29,7 @@
     <% if current_user.profile_picture %>
       <%= image_tag current_user.profile_picture, class: "menu-profile-avatar" %>
     <% end %>
-    <%= link_to "Profile", "#" %>
-  </div>
-  <div class="menu-features-item d-flex">
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+    <%= link_to "Profile", user_path(@user) %>
   </div>
 </div>
 

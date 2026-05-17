@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   #
   resources :posts
   resources :subscriptions, only: [:create, :destroy, :index]
+  resources :users, only: [:show]
 end

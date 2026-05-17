@@ -1,0 +1,114 @@
+.profile-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 2rem;
+  background: $upstack-card-bg;
+  border: 1px solid $upstack-border;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+
+  &__avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__avatar-initials {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: $upstack-accent;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__username {
+    color: $upstack-text;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  &__email {
+    color: $upstack-muted;
+    font-size: 0.875rem;
+    margin: 0 0 0.875rem;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__logout {
+    margin-left: auto;
+    align-self: flex-start;
+    color: $upstack-muted;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid $upstack-border;
+    border-radius: 8px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: $upstack-error-clr;
+      border-color: $upstack-error-clr;
+    }
+  }
+
+  &__stat {
+    color: $upstack-muted;
+    font-size: 0.875rem;
+
+    strong {
+      color: $upstack-text;
+      font-weight: 700;
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+.profile-posts {
+  &__heading {
+    color: $upstack-text;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.875rem;
+    border-bottom: 1px solid $upstack-border;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: $upstack-muted;
+  }
+
+  .post-feed {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
