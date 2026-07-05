@@ -1,0 +1,48 @@
+=> 
+[[32m#<Post:0x00007d84f80eb5f0[0m
+  [36mid[0m: [34m[1m4[0m,
+  [36muser_id[0m: [34m[1m8[0m,
+  [36mtitle[0m:
+   [31m[1m"[0m[31mMetaphors for Biology: Evolution[0m[31m[1m"[0m,
+  [36mdraft_or_published[0m: [36m[1mnil[0m,
+  [36mcreated_at[0m:
+   [31m[1m"[0m[31m2026-04-06 19:02:42.902394000 +0000[0m[31m[1m"[0m,
+  [36mupdated_at[0m:
+   [31m[1m"[0m[31m2026-05-10 12:52:50.873054000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<Post:0x00007d84f3e67e40[0m
+  [36mid[0m: [34m[1m8[0m,
+  [36muser_id[0m: [34m[1m8[0m,
+  [36mtitle[0m: [31m[1m"[0m[31mMorality in Politics[0m[31m[1m"[0m,
+  [36mdraft_or_published[0m: [36m[1mnil[0m,
+  [36mcreated_at[0m:
+   [31m[1m"[0m[31m2026-05-01 15:54:37.865295000 +0000[0m[31m[1m"[0m,
+  [36mupdated_at[0m:
+   [31m[1m"[0m[31m2026-05-10 12:54:16.751879000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<Post:0x00007d84f3e67d00[0m
+  [36mid[0m: [34m[1m13[0m,
+  [36muser_id[0m: [34m[1m8[0m,
+  [36mtitle[0m: [31m[1m"[0m[31mWhat Makes Art Great?[0m[31m[1m"[0m,
+  [36mdraft_or_published[0m: [36m[1mnil[0m,
+  [36mcreated_at[0m:
+   [31m[1m"[0m[31m2026-05-10 13:02:12.850838000 +0000[0m[31m[1m"[0m,
+  [36mupdated_at[0m:
+   [31m[1m"[0m[31m2026-05-10 13:02:17.022328000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<Post:0x00007d84f3e67bc0[0m
+  [36mid[0m: [34m[1m14[0m,
+  [36muser_id[0m: [34m[1m11[0m,
+  [36mtitle[0m: [31m[1m"[0m[31mtest[0m[31m[1m"[0m,
+  [36mdraft_or_published[0m: [36m[1mnil[0m,
+  [36mcreated_at[0m:
+   [31m[1m"[0m[31m2026-05-14 15:08:25.779405000 +0000[0m[31m[1m"[0m,
+  [36mupdated_at[0m:
+   [31m[1m"[0m[31m2026-05-14 15:08:25.791273000 +0000[0m[31m[1m"[0m[32m>[0m,
+ [32m#<Post:0x00007d84f3e67a80[0m
+  [36mid[0m: [34m[1m15[0m,
+  [36muser_id[0m: [34m[1m10[0m,
+  [36mtitle[0m:
+   [31m[1m"[0m[31mNotes from the SF Peptide Scene[0m[31m[1m"[0m,
+  [36mdraft_or_published[0m: [36m[1mnil[0m,
+  [36mcreated_at[0m:
+   [31m[1m"[0m[31m2026-05-17 15:29:28.359971000 +0000[0m[31m[1m"[0m,
+  [36mupdated_at[0m:
+   [31m[1m"[0m[31m2026-05-17 16:27:01.569141000 +0000[0m[31m[1m"[0m[32m>[0m]

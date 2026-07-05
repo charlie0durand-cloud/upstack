@@ -26,19 +26,20 @@
 
   <div class="post-feed">
     <h1 class="post-show-title"> <%= @post.title %></h1>
-    <div class="d-flex">
 
+    <%= link_to user_path do %>
+    <div class="d-flex">
       <% if @post.user.profile_picture.attached? %>
         <%= image_tag @post.user.profile_picture, class: "post-profile-avatar" %>
       <% else %>
         <span class="post-author-avatar"><%= @post.user.username[0].upcase %></span>
       <% end %>
-
-      <div>
-        <span class="username-post"> <%= @post.user.username.upcase %></span><br>
-        <span class="date-post"> <%= @post.created_at.strftime("%B %d, %Y") %></span>
+        <div>
+          <span class="username-post"> <%= @post.user.username.upcase %></span><br>
+          <span class="date-post"> <%= @post.created_at.strftime("%B %d, %Y") %></span>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <hr>
     <%= cl_image_tag @post.post_picture.key, crop: :fill %>
