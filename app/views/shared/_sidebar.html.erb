@@ -7,7 +7,7 @@
   </div>
 
 <%# Middle: List of features %>
-    <%# The color of the icons is hard-coded instead of being a variable %>
+    <%# The color of the icons is hard-coded %>
 <div class="menu-features">
   <div class="menu-features-item">
     <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="#777777" stroke-width="1.8" stroke="none" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;"><g><title></title><path d="M13.315 1.4785C12.5616 0.840501 11.4384 0.840501 10.685 1.4785L2.02743 8.80973C1.37462 9.36254 1 10.1622 1 11.003L1 19.1187C1 21.2623 2.79086 23 5 23L19 23C21.2091 23 23 21.2623 23 19.1187V11.003C23 10.1622 22.6254 9.36254 21.9726 8.80973L13.315 1.4785ZM10.4472 17.2804C9.95321 17.0408 9.35254 17.2351 9.10555 17.7144C8.85856 18.1937 9.05878 18.7765 9.55276 19.0162C11.0933 19.7636 12.9067 19.7636 14.4472 19.0162C14.9412 18.7766 15.1414 18.1937 14.8944 17.7144C14.6474 17.2351 14.0468 17.0408 13.5528 17.2804C12.5753 17.7547 11.4247 17.7547 10.4472 17.2804Z" fill-rule="evenodd" clip-rule="evenodd"></path></g></svg>
@@ -26,8 +26,10 @@
     <%= link_to "Leaderboard", "#" %>
   </div>
   <div class="menu-features-item d-flex">
-    <% if current_user.profile_picture %>
+    <% if current_user.profile_picture.attached? %>
       <%= image_tag current_user.profile_picture, class: "menu-profile-avatar" %>
+    <% else %>
+      <span class="post-author-avatar"><%= current_user.username[0].upcase %></span>
     <% end %>
     <%= link_to "Profile", user_path(@user) %>
   </div>
