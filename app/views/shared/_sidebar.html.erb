@@ -26,8 +26,10 @@
     <%= link_to "Leaderboard", "#" %>
   </div>
   <div class="menu-features-item d-flex">
-    <% if current_user.profile_picture %>
+    <% if current_user.profile_picture.attached? %>
       <%= image_tag current_user.profile_picture, class: "menu-profile-avatar" %>
+    <% else %>
+      <span class="post-author-avatar"><%= current_user.username[0].upcase %></span>
     <% end %>
     <%= link_to "Profile", user_path(@user) %>
   </div>
