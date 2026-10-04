@@ -78,3 +78,4 @@ gem "cloudinary"
 gem "pg_search"
 gem "pundit"
 gem 'letter_opener', group: :development
+gem "ruby-vips", "~> 2.0"
